@@ -1,0 +1,78 @@
+* {
+    background-image: none;
+    box-shadow: none;
+    font-family: "Terminess Nerd Font", monospace;
+}
+
+window {
+    background-color: rgba(40, 40, 40, 0.92); /* bg0 */
+}
+
+button {
+    border-radius: 0;
+    border: none;
+    color: #ebdbb2;                 /* fg */
+    background-color: #3c3836;      /* bg1 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    margin: 6px;
+    font-size: 14px;
+}
+
+button:hover,
+button:focus,
+button:active {
+    background-color: #504945;      /* bg2 */
+    color: #fbf1c7;                 /* fg brighter */
+    outline: none;
+}
+
+#lock        { color: #b8bb26; } /* green */
+#logout      { color: #83a598; } /* blue */
+#suspend     { color: #fabd2f; } /* yellow */
+#hibernate   { color: #d3869b; } /* purple */
+#shutdown    { color: #fb4934; } /* red */
+#reboot      { color: #fe8019; } /* orange */
+
+#lock {
+    background-image: image(
+        url("/usr/share/wlogout/icons/lock.png"),
+        url("/usr/local/share/wlogout/icons/lock.png")
+    );
+}
+
+#logout {
+    background-image: image(
+        url("/usr/share/wlogout/icons/logout.png"),
+        url("/usr/local/share/wlogout/icons/logout.png")
+    );
+}
+
+#suspend {
+    background-image: image(
+        url("/usr/share/wlogout/icons/suspend.png"),
+        url("/usr/local/share/wlogout/icons/suspend.png")
+    );
+}
+
+#hibernate {
+    background-image: image(
+        url("/usr/share/wlogout/icons/hibernate.png"),
+        url("/usr/local/share/wlogout/icons/hibernate.png")
+    );
+}
+
+#shutdown {
+    background-image: image(
+        url("/usr/share/wlogout/icons/shutdown.png"),
+        url("/usr/local/share/wlogout/icons/shutdown.png")
+    );
+}
+
+#reboot {
+    background-image: image(
+        url("/usr/share/wlogout/icons/reboot.png"),
+        url("/usr/local/share/wlogout/icons/reboot.png")
+    );
+}

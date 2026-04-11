@@ -1,0 +1,109 @@
+{
+	"layer": "top",
+	"position": "bottom",
+	"height": 25,
+	// "margin-left": 10,
+	// "margin-right": 10,
+	// "margin-top": 10,
+	
+	"modules-left": [
+		"hyprland/workspaces",
+		"custom/music"
+	],
+	"modules-center": [
+		"clock#1",
+		"clock#2",
+	],
+	"modules-right": [
+		"backlight",
+		"battery",
+		"wireplumber",
+		"network",
+		"tray",
+	],
+
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"1": "一",
+			"2": "二",
+			"3": "三",
+			"4": "四",
+			"5": "五",
+			"6": "六",
+			"7": "七",
+			"8": "八",
+			"9": "九",
+			"10": "十"
+    	},
+		"active": "",
+		"sort-by-number": true
+  	},
+
+	"clock#1": {
+		"format": "<b>| {:%a-%m-%d}</b>",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "<b>{:%I:%M} |</b>",
+		"tooltip": false
+	},
+	
+	"backlight": {
+		// "format": "<b>{percent}%</b> {icon}",
+		"format": "light: <b>{percent}%</b>",
+		"format-icons": ["󰃞 ", "󰃟 ", "󰃠 "],
+		"icon-size": "100",
+		"tooltip": false
+	},
+	
+	"battery": {
+		// "format": "<b>{capacity}%</b> {icon}",
+		"format": "bat: <b>{capacity}%</b>",
+		"format-icons": {
+			"default":  [" "," "," "," "," "],
+			"charging": "󱐋",
+			"plugged": "󰚥",
+		}
+	},
+
+	"wireplumber": {
+		//"format": "<b>{volume}%</b> {icon}",
+		"format": "vol: <b>{volume}%</b>",
+		"format-muted": " ",
+		"on-click": "helvum",
+		"format-icons": [" "," "," "]
+	},
+	
+	"network": {
+		"format": "net: {icon}",
+		"format-icons": {
+			"wifi": " ",
+			"ethernet": " ",
+			"disconnected": "󰀪 "
+		},
+		"tooltip-format": "{ifname} via {gwaddr}",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
+		"tooltip-format-ethernet": "{ifname}",
+		"tooltip-format-disconnected": "Disconnected",
+		"on-click":"hyprctl dispatch exec '[float; size 788 490; center; pin] nmtui'"
+	},
+
+	"custom/music": {
+		"format": "{}",
+		"exec": "~/.config/waybar/scripts/spotify.sh",
+		"interval": 5,
+		"return-type": "string",
+		"max-length": 30,
+		"on-click": "playerctl --player=spotify play-pause",
+		"on-scroll-up": "playerctl --player=spotify next",
+		"on-scroll-down": "playerctl --player=spotify previous"
+	},
+	
+	
+	"tray": {
+		"icon-size": 22,
+		"spacing": 10
+	}
+}

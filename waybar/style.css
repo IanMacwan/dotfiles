@@ -1,0 +1,76 @@
+* {
+  font-size: 16px;
+  font-family: Terminess Nerd Font Propo;
+  opacity: 1;
+}
+
+#waybar {
+  background-color: #272727;
+  /* border-radius: 0.5em; */
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+	background: #272727;
+	border-radius: 0.5em;
+}
+
+tooltip {
+  color: #272727;
+  background-color: #272727;
+}
+
+#workspaces button {
+  color: #EBDBB2;
+  padding: 0 0.4em;
+}
+
+#workspaces button.active {
+	color: #98971A;
+}
+
+#clock{
+	color: #EBDBB2;
+}
+
+#backlight {
+	color: #FABD2F;
+}
+
+#battery {
+	color: #B8BB26;
+}
+
+#wireplumber {
+	color: #FB4934;
+}
+
+#network {
+	color: #83A598;
+}
+
+#network.disconnected {
+	color: #CC241D;
+}
+
+#custom-music {
+	color: #98971A;
+	padding: 0 0.5em;
+}
+
+#bluetooth {
+	color: #458588;
+}
+
+#clock,
+#battery,
+#backlight,
+#wireplumber,
+#network,
+#bluetooth,
+#tray{	
+	padding: 0 0.4em;
+}
+
+
