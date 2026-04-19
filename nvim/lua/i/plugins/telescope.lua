@@ -2,11 +2,11 @@ return {
   {
 	'nvim-telescope/telescope.nvim',
 	dependencies = {
-		{ 'BurntSushi/ripgrep', 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+		{ 'BurntSushi/ripgrep' },
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
 	},
 	config = function(lazy, opts) 
 		local telescope = require('telescope')
-		telescope.load_extension('fzf')
 		telescope.setup({
 			defaults = {
 				wrap_result = true,
@@ -35,6 +35,7 @@ return {
 				["buffers"] = { sort_mru = true, ignore_current_buffer = true },
 			}
 		})
+    telescope.load_extension('fzf')
 	end,
 
 	keys = {
