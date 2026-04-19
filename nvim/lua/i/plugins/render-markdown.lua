@@ -26,6 +26,6 @@ return {
             checked = { icon = '✔ ', scope_highlight = '@markup.strikethrough' },
             custom = { todo = { rendered = '◯ ' } },
         },
-        render_modes = { 'n', 'c', 't' }
+        render_modes = { 'n', 'c', 't', 'i' }
     },
 }

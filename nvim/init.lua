@@ -57,3 +57,14 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+-- Auto-start Treesitter for known file types
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+  callback = function()
+    local buf = vim.api.nvim_get_current_buf()
+    local lang = vim.treesitter.language.get_lang(vim.bo[buf].filetype)
+    if lang then
+      pcall(vim.treesitter.start)
+    end
+  end,
+})
