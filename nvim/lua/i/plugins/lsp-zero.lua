@@ -112,10 +112,29 @@ return {
       end)
 
       require('mason-lspconfig').setup({
-        ensure_installed = {'ts_ls', 'clangd'},  -- Ensure tsserver is installed 
+        ensure_installed = {'ts_ls', 'clangd', 'rust_analyzer' },  -- Ensure tsserver is installed 
         handlers = {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"
+          --
+          rust_analyzer = function()
+            require('lspconfig').rust_analyzer.setup({
+              on_attach = function(client, bufnr)
+                require('lsp-zero').default_keymaps({ buffer = bufnr })
+              end,
+              settings = {
+                ['rust-analyzer'] = {
+                  cargo = {
+                    allFeatures = true,
+                  },
+                  checkOnSave = {
+                    command = "clippy",
+                  },
+                },
+              },
+            })
+          end,
+
           function(server_name)
             require('lspconfig')[server_name].setup({})
           end,
