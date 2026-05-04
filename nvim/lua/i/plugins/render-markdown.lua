@@ -24,7 +24,7 @@ return {
         checkbox = {
             unchecked = { icon = '✘ ' },
             checked = { icon = '✔ ', scope_highlight = '@markup.strikethrough' },
-            custom = { todo = { rendered = '◯ ' } },
+            custom = { todo = { rendered = '󰥔 ' } },
         },
         render_modes = { 'n', 'c', 't', 'i' }
     },
