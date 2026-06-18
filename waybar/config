@@ -12,14 +12,15 @@
 	],
 	"modules-center": [
 		"clock#1",
-		"clock#2",
+		"clock#2"
 	],
 	"modules-right": [
 		"backlight",
 		"battery",
+    "power-profiles-daemon",
 		"wireplumber",
 		"network",
-		"tray",
+		"tray"
 	],
 
 	"hyprland/workspaces": {
@@ -64,9 +65,20 @@
 		"format-icons": {
 			"default":  [" "," "," "," "," "],
 			"charging": "󱐋",
-			"plugged": "󰚥",
+			"plugged": "󰚥"
 		}
 	},
+
+  "power-profiles-daemon": {
+      "format": "pro: <b>{icon}</b>",
+      "tooltip": true,
+      "tooltip-format": "",
+      "format-icons": {
+          "performance": "󰓅",
+          "balanced": "󰾅",
+          "power-saver": "󰌪"
+      }
+  },
 
 	"wireplumber": {
 		//"format": "<b>{volume}%</b> {icon}",
