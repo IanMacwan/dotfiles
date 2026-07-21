@@ -12,8 +12,12 @@ return {
     workspaces = {
       {
         name = "vault",
-        path = "/home/ian/notes/ianvault",
+        path = "/home/ian/notes/ianvault/",
       },
+    },
+
+    ignore_filters = {
+      "/home/ian/notes/ianvault/code/",
     },
 
     daily_notes = {
